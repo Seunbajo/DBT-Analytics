@@ -39,11 +39,29 @@ with customers as (
     group by customer_unique_id, day_of_week, name_of_day
 )
 
+, rank_order as (
+    select 
+        *
+        , rank() over (partition by customer_unique_id order by total_price desc) as rank_number
+    from highest_purchase_day 
+)
+
+, third_order_value as (
+    select 
+        customer_unique_id
+        , total_price as third_order_v
+    from rank_order
+    where rank_number = 3
+)
+
 , final as (
     select 
-    * 
-    , rank() over (partition by customer_unique_id order by total_price desc) as rank_number
-    from highest_purchase_day 
+    rank_order.*
+    , coalesce(third_order_value.third_order_v, 0) as third_value
+    from rank_order
+    left join third_order_value
+    on rank_order.customer_unique_id = third_order_value.customer_unique_id
+    order by third_value desc
 )
 
 select * from final
