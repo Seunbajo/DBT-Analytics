@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: dbt_projects_services
+    database: dbt-project-393515
+    schema: dbt_projects
+    tables:
+      - name: vendease_customers
+        description: ''
+      - name: vendease_order_items
+        description: ''
+      - name: vendease_order_payments
+        description: ''
+      - name: vendease_orders
+        description: ''
+      - name: vendease_product_category
+        description: ''
+      - name: vendease_products
+        description: ''
+      - name: vendease_sellers
+        description: ''
