@@ -40,3 +40,4 @@ with customers as (
 )
 
 select * from final
+order by total_price desc
