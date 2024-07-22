@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_vendease_customers
+    description: '{{ doc("stg_vendease_customers") }}'
+    columns:
+      - name: customer_id
+        description: '{{ doc("stg_vendease_customers_customer_id") }}'
+        tests:
+          - not_null
+
+      - name: customer_unique_id
+        description: '{{ doc("stg_vendease_customers_customer_unique_id") }}'
+
+      - name: customer_zip_code_prefix
+        description: '{{ doc("stg_vendease_customers_customer_zip_code_prefix") }}'
+
+      - name: customer_city
+        description: '{{ doc("stg_vendease_customers_customer_city") }}'
+
+      - name: customer_state
+        description: '{{ doc("stg_vendease_customers_customer_state")}}'

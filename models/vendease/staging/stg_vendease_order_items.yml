@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_vendease_order_items
+    description: '{{ doc("stg_vendease_order_items") }}'
+    columns:
+      - name: order_id
+        description: '{{ doc("stg_vendease_order_items_order_id") }}'
+        tests:
+          - not_null
+
+      - name: order_item_id
+        description: '{{ doc("stg_vendease_order_items_order_item_id") }}'
+
+      - name: product_id
+        description: '{{ doc("stg_vendease_order_items_product_id") }}'
+
+      - name: seller_id
+        description: '{{ doc("stg_vendease_order_items_seller_id") }}'
+
+      - name: shipping_limit_date
+        description: '{{ doc("stg_vendease_order_items_shipping_limit_date") }}'
+
+      - name: price 
+        description: '{{ doc("stg_vendease_order_items_price") }}'
+
+      - name: freight_value
+        description: '{{ doc("stg_vendease_order_items_freight_value") }}'
