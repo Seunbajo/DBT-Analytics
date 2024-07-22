@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_vendease_order_payments
+    description: '{{ doc("stg_vendease_order_payments") }}'
+    columns:
+      - name: order_id
+        description: '{{ doc("stg_vendease_order_payments_order_id") }}'
+        tests:
+          - not_null
+
+      - name: payment_sequential
+        description: '{{ doc("stg_vendease_order_payments_payment_sequential") }}'
+
+      - name: payment_type
+        description: '{{ doc("stg_vendease_order_payments_payment_type") }}'
+
+      - name: payment_installments
+        description: '{{ doc("stg_vendease_order_payments_payment_installments") }}'
+
+      - name: payment_value
+        description: '{{ doc("stg_vendease_order_payments_payment_value") }}'

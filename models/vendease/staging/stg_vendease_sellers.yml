@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_vendease_sellers
+    description: '{{ doc("stg_vendease_sellers") }}'
+    columns:
+      - name: seller_id
+        description: '{{ doc("stg_vendease_sellers_seller_id") }}'
+        tests:
+          - not_null
+
+      - name: seller_zip_code_prefix
+        description: '{{ doc("stg_vendease_sellers_seller_zip_code_prefix") }}'
+
+      - name: seller_city
+        description: '{{ doc("stg_vendease_sellers_seller_city") }}'
+
+      - name: seller_state
+        description: '{{ doc("stg_vendease_sellers_seller_state") }}'
