@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: dbt_projects_services
+    database: dbt-project-393515
+    schema: dbt_projects
+    tables:
+      - name: crunchbase_startsup
+        description: ''
