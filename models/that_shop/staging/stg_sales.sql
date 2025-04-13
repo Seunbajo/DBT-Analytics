@@ -10,7 +10,9 @@ with staging as (
 ),
 
 final as (
-    select * from staging
+    select
+        *
+    from staging
 )
 
 select * from final
