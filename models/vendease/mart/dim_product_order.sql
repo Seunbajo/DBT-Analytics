@@ -44,6 +44,8 @@ with customers as (
     , orders.order_status
     , orders.order_purchase_timestamp
     , order_payment.payment_type
+    , order_items.freight_value
+    , order_payment.payment_value
     from 
     order_items 
     left join products on order_items.product_id = products.product_id
