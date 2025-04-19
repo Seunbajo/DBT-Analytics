@@ -13,11 +13,11 @@ with sales as (
     select
         * 
         , case 
-            when total_value >= 300 then 'highest_end_product'
-            when total_value >= 200 then 'high_end_product'
-            when total_value >= 100 then 'middle_end_product'
-            when total_value >= 50 then 'low_end_product'
-            else 'very_low_end_product'
+            when total_value >= 300 then 'highest_price_product'
+            when total_value >= 200 then 'high_price_product'
+            when total_value >= 100 then 'middle_price_product'
+            when total_value >= 50 then 'low_price_product'
+            else 'very_low_price_product'
           end as class_of_product
     from sales
 )
