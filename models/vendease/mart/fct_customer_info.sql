@@ -17,6 +17,7 @@ with customers as (
     select * from {{ ref('stg_vendease_order_items') }}
 )
 
+--model to aggregate products bought by city
 
 , aggregate_func as (
   select 

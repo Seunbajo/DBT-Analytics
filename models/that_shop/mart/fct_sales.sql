@@ -9,6 +9,8 @@ with sales as (
     select * from {{ ref('stg_sales') }}
 )
 
+--Sales model to tell the good bought
+
 , final as (
     select
         * 
