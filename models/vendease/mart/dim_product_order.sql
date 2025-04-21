@@ -32,6 +32,7 @@ with customers as (
 , order_payment as (
     select * from {{ ref('stg_vendease_order_payments') }}
 )
+-- Model to customers, order and prices  
 
 , final as (
     select 
