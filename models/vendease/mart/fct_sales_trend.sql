@@ -16,7 +16,7 @@ with orders as (
 , final as (
     select 
     extract(YEAR from order_purchase_timestamp) as year
-    , FORMAT_DATE('%b', order_purchase_timestamp) as name_of_month
+    , format_date('%b', order_purchase_timestamp) as name_of_month
     , sum(order_items.price) as total_sales
     from orders
     join order_items on orders.order_id = order_items.order_id
