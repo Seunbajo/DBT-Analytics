@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: dbt_projects_services
+    database: dbt-project-393515
+    schema: dbt_projects
+    tables:
+      - name: electronic_customers
+        description: ''
+
+      - name: electronic_exchange_rate
+        description: ''
+
+      - name: electronic_products
+        description: ''
+
+      - name: electronic_sales
+        description: ''
+
+      - name: electronic_stores
+        description: ''
