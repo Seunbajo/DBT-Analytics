@@ -24,19 +24,22 @@ with sales as (
 , final as (
     select
         sales.customer_id
-        , customers.customer_name
         , sales.order_number
         , sales.order_date
         , sales.delivery_date
         , sales.quantity
+        -- add product information
         , products.product_name
         , products.subcategory
         , products.category
-        , stores.state
-        , stores.country
+        --add customer information
+        , customers.customer_name
         , customers.continent
         , customers.city
         , customers.gender
+        -- store information
+        , stores.state
+        , stores.country
     from sales
     left join stores on sales.store_id = stores.store_id
     left join products on sales.product_id = products.product_id
