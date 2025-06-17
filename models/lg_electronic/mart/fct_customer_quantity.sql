@@ -27,6 +27,7 @@ with sales as (
         , customers.city
         , customers.state
         , customers.country
+        , customers.gender
     from sales
     left join customers
         on sales.customer_id = customers.customer_id
