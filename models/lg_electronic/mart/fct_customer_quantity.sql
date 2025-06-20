@@ -18,11 +18,13 @@ with sales as (
     select * from {{ ref('dim_electronic_customers') }}
 )
 
+-- the model count the number of products bought by each customer
 , final as (
     select 
         sales.customer_id
         , sales.currency_code
         , sales.quantity
+        -- customers info
         , customers.customer_name
         , customers.city
         , customers.state
