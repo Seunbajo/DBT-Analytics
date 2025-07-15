@@ -17,6 +17,7 @@ with customers as (
     select * from {{ ref('stg_vendease_order_items') }}
 )
 
+--get the day of week and name of day for each order
 , orders as (
     select 
     order_id
@@ -27,6 +28,7 @@ with customers as (
     from customer_orders
 )
 
+--group orders by customers and day of the week
 , highest_purchase_day as (
     select
     customers.customer_unique_id
@@ -39,6 +41,7 @@ with customers as (
     group by customer_unique_id, day_of_week, name_of_day
 )
 
+-- rank every customers order
 , rank_order as (
     select 
         *
@@ -46,6 +49,7 @@ with customers as (
     from highest_purchase_day 
 )
 
+--get the third order value for each customer
 , third_order_value as (
     select 
         customer_unique_id
