@@ -58,6 +58,7 @@ with customers as (
     where rank_number = 3
 )
 
+--final cte to join customers order and the third order value
 , final as (
     select 
     rank_order.*

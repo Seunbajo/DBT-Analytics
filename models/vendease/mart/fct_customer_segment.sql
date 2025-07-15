@@ -29,6 +29,7 @@ with customers as (
     group by customer_unique_id
 )
 
+--group customers by value of purchase
 , final as (
     select 
     *, 
