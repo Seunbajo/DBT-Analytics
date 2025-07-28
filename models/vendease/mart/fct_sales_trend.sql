@@ -13,6 +13,7 @@ with orders as (
     select * from {{ ref('stg_vendease_order_items') }}
 )
 
+--get sales trend by year and month
 , final as (
     select 
     extract(YEAR from order_purchase_timestamp) as year
