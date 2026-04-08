@@ -19,3 +19,6 @@ sources:
 
       - name: electronic_stores
         description: ''
+
+      - name: hot_bot_data
+        description: ''
