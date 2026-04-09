@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: dbt_projects_services
+    database: dbt-project-393515
+    schema: dbt_projects
+    tables:
+      - name: ec_orders
+        description: ''
+      
+      - name: ec_order_items
+        description: ''
+
+      - name: ec_ad_performance
+        description: ''
+
+      - name: ec_campaigns
+        description: ''
+
+      - name: ec_products
+        description: ''
+
+      - name: ec_website_sessions
+        description: ''
