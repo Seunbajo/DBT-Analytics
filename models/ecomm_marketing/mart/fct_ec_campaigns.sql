@@ -13,17 +13,20 @@ with ad_performance as (
     select * from {{ ref('stg_ec_campaigns') }}
 )
 
-, website_sessions as (
-    select 
-        ad_id
-        , count(pages_viewed) as pages_viewed
-        , sum(session_duration_seconds) as session_seconds
-    from {{ ref('stg_ec_website_sessions') }}
-    group by ad_id
-)
-
 , final as (
-    select * from ad_performance
+    select
+        ad_performance.ad_id
+        , ad_performance.date
+        , ad_performance.impressions
+        , ad_performance.clicks
+        , ad_performance.ad_spend
+        , campaigns.campaign_name
+        , campaigns.channel
+        , campaigns.start_date
+        , campaigns.end_date
+    from ad_performance
+    left join campaigns
+       on ad_performance.campaign_id = campaigns.campaign_id
 )
 
 select * from final
