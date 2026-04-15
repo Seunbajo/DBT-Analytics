@@ -1,4 +1,6 @@
-Welcome to your new dbt project!
+Welcome to my dbt project!
+
+### The goal is build models for the business business cases. 
 
 ### Using the starter project
 

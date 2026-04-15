@@ -22,3 +22,6 @@ sources:
 
       - name: ec_website_sessions
         description: ''
+
+      - name: ec_session_order_item
+        description: ''
