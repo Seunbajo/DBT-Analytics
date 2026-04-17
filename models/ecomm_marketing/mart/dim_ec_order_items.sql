@@ -17,18 +17,6 @@ with order_items as (
     select * from {{ ref('stg_ec_products') }}
 )
 
-, campaigns as (
-    select * from {{ ref('stg_ec_campaigns') }}
-)
-
-, ad_performance as (
-    select * from {{ ref('stg_ec_ad_performance') }}
-)
-
-, website_sessions as (
-    select * from {{ ref('stg_ec_website_sessions') }}
-)
-
 , final as (
     select
         orders.order_id
