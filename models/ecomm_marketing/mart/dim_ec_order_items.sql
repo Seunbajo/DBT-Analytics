@@ -21,7 +21,7 @@ with order_items as (
     select
         orders.order_id
         , orders.order_date
-        , cast(orders.order_date as date) as date_order
+        , cast(orders.order_date as date) as order_created_date
         , order_items.order_item_id
         , order_items.unit_price
         , order_items.unit_cost
