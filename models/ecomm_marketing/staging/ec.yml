@@ -25,3 +25,6 @@ sources:
 
       - name: ec_session_order_item
         description: ''
+
+      - name: ec_customers
+        description: ''

@@ -10,15 +10,19 @@ with customer_orders as (
     o.order_id,
     o.order_date,
     o.order_value,
+    c.customer_name,
     row_number() over (partition by ws.user_id order by o.order_date) as order_number
   from {{ ref('stg_ec_website_sessions') }} ws
   inner join {{ ref('stg_ec_orders') }} o
     on ws.session_id = o.session_id
+inner join {{ ref('stg_ec_customers') }} c
+    on ws.user_id = c.user_id
   where ws.user_id is not null
 )
 
 select 
   user_id,
+  customer_name,
   count(*) as total_orders,
   sum(order_value) as lifetime_value,
   max(case when order_number = 1 then order_value end) as first_order_value,
@@ -31,4 +35,4 @@ select
     day
   ) as days_active
 from customer_orders
-group by user_id
+group by user_id, customer_name
