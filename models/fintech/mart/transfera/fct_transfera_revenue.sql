@@ -51,7 +51,6 @@ with transactions as (
         on t.source_country = sc.country_code
     left join countries as dc
         on t.destination_country = dc.country_code
-    where t.transaction_status = 'Successful'
 )
 
 select * from final
