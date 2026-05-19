@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: dbt_projects_services
+    database: dbt-project-393515
+    schema: dbt_projects
+    tables:
+      - name: transfera_api_logs
+        description: ''
+
+      - name: transfera_countries
+        description: ''
+      
+      - name: transfera_customers
+        description: ''
+
+      - name: transfera_fraud_alerts
+        description: ''
+
+      - name: transfera_fx_rates
+        description: ''
+
+      - name: transfera_marketing_campaigns
+        description: ''
+
+      - name: transfera_partners
+        description: ''
+
+      - name: transfera_support_tickets
+        description: ''
+
+      - name: transfera_transactions
+        description: ''
