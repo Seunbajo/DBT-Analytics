@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: dbt_projects_services
+    database: dbt-project-393515
+    schema: dbt_projects
+    tables:
+      - name: corridor_commission
+        description: ''
+
+      - name: corridor_outbound_txns
+        description: ''
+
+      - name: corridor_partner_inbound
+        description: ''
+
+      - name: corridor_partner_outflow
+        description: ''
+
+      - name: corridor_partner_wallet_balance
+        description: ''
