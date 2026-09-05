@@ -28,3 +28,30 @@ sources:
 
       - name: ec_customers
         description: ''
+
+      - name: faker_ad_spend
+        description: ''
+
+      - name: faker_campaigns
+        description: ''
+
+      - name: faker_channel
+        description: ''
+
+      - name: faker_customer_touchpoints
+        description: ''
+
+      - name: faker_customers
+        description: ''
+
+      - name: faker_order_items
+        description: ''
+
+      - name: faker_orders
+        description: ''
+
+      - name: faker_products
+        description: ''
+
+      - name: faker_sales_date
+        description: ''
