@@ -10,7 +10,20 @@ with staging as (
 ),
 
 final as (
-    select * from staging
+    select
+        order_id
+        , customer_id
+        , cast(order_timestamp as timestamp) as order_timestamp
+        , order_status
+        , ship_country
+        , ship_state
+        , ship_city
+        , ship_postal_code
+        , discount_amount
+        , shipping_cost
+        , last_click_channel
+        , last_click_campaign_id
+    from staging
 )
 
 select * from final
