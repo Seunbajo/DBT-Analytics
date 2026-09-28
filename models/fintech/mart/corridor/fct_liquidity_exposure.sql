@@ -9,7 +9,7 @@ with latest_balance as (
         partner,
         closing_balance as current_balance,
         date as balance_date
-    from {{ ref('stg_corridor_partner_wallet_balance') }}
+    from {{ ref('stg_partner_wallet_balance') }}
     qualify row_number() over (
         partition by partner 
         order by date desc
@@ -24,11 +24,11 @@ recent_outflow_stats as (
         round(min(total_outflow_usd), 2) as min_daily_outflow,
         round(max(total_outflow_usd), 2) as max_daily_outflow,
         count(distinct date) as days_in_period
-    from {{ ref('stg_corridor_partner_outflow') }}
+    from {{ ref('stg_partner_outflow') }}
     where date >= date_sub(
         (
             select max(date)
-            from {{ ref('stg_corridor_partner_outflow') }}
+            from {{ ref('stg_partner_outflow') }}
         ),
         interval 30 day
     )
