@@ -42,12 +42,16 @@ order_revenue as (
     group by oi.order_id
 )
 
-select
-    w.channel
-    , round(sum(w.weight), 4) as attributed_orders
-    , round(sum(r.revenue * w.weight), 2) as attributed_revenue
-from weighted as w
-inner join order_revenue as r
-    on w.order_id = r.order_id
-group by w.channel
-order by attributed_revenue desc
+, final as (
+        select
+        w.channel
+        , round(sum(w.weight), 4) as attributed_orders
+        , round(sum(r.revenue * w.weight), 2) as attributed_revenue
+    from weighted as w
+    inner join order_revenue as r
+        on w.order_id = r.order_id
+    group by w.channel
+    order by attributed_revenue desc
+) 
+
+select * from final

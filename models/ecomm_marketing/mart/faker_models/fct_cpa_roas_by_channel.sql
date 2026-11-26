@@ -26,14 +26,18 @@ spend_by_channel as (
     group by camp.channel
 )
 
-select
-    r.channel
-    , r.orders
-    , round(r.revenue, 2) as revenue
-    , round(coalesce(s.spend, 0), 2) as spend
-    , round(coalesce(s.spend, 0) / nullif(r.orders, 0), 2) as cpa
-    , round(r.revenue / nullif(s.spend, 0), 2) as roas
-from revenue_by_channel as r
-left join spend_by_channel as s
-    on r.channel = s.channel
-order by revenue desc
+, final as (
+        select
+        r.channel
+        , r.orders
+        , round(r.revenue, 2) as revenue
+        , round(coalesce(s.spend, 0), 2) as spend
+        , round(coalesce(s.spend, 0) / nullif(r.orders, 0), 2) as cpa
+        , round(r.revenue / nullif(s.spend, 0), 2) as roas
+    from revenue_by_channel as r
+    left join spend_by_channel as s
+        on r.channel = s.channel
+    order by revenue desc
+) 
+
+select * from final
